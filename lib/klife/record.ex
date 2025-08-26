@@ -35,9 +35,9 @@ defmodule Klife.Record do
           key: binary(),
           headers: list(%{key: binary(), value: binary()}),
           topic: String.t(),
-          partition: non_neg_integer(),
-          offset: non_neg_integer(),
-          error_code: integer()
+          partition: non_neg_integer() | nil,
+          offset: non_neg_integer() | nil,
+          error_code: integer() | nil
         }
 
   def t, do: t()
