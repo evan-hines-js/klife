@@ -489,7 +489,7 @@ defmodule Klife.Client do
         do: Klife.produce_batch_async(recs, __MODULE__, opts)
 
       @spec produce_batch_txn(list(Record.t()), opts :: list() | nil) ::
-              list({:ok, list(Record.t())}) | list({:error, list(Record.t())})
+              {:ok, list_of_records} | {:error, list_of_records}
       def produce_batch_txn(recs, opts \\ []), do: Klife.produce_batch_txn(recs, __MODULE__, opts)
 
       @spec transaction(function(), opts :: list() | nil) :: any()
