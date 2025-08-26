@@ -37,10 +37,10 @@ defmodule Klife.Record do
           key: binary(),
           headers: list(%{key: binary(), value: binary()}),
           topic: String.t(),
-          partition: non_neg_integer(),
-          offset: non_neg_integer(),
+          partition: non_neg_integer() | nil,
+          offset: non_neg_integer() | nil,
           consumer_attempts: nil | non_neg_integer(),
-          error_code: integer()
+          error_code: integer() | nil
         }
 
   def t, do: t()
