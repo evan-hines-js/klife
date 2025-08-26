@@ -361,7 +361,7 @@ defmodule Klife.Client do
       iex> :ok = MyClient.produce_batch_async(input, callback: {CB2, :exec, ["arg1", "arg2"]})
 
   """
-  @callback produce_batch_async(record, opts :: Keyword.t()) :: :ok
+  @callback produce_batch_async(list_of_records, opts :: Keyword.t()) :: :ok
 
   @doc group: "Transaction API"
   @doc """
